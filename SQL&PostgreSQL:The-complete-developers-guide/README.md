@@ -8,6 +8,8 @@
 4. [Retrieving Data](#retrieving-data)
 5. [Calculation Columns Within Table](#calculation-columns-within-table)
 6. [String Operators and Functions](#string-operators-and-functions)
+7. [Filtering using `WHERE`](#filtering-using-where)
+   1. [Comparison Operators](##comparison-operators)
 
 ## Database Design Process
 
@@ -91,8 +93,38 @@ SELECT name ||', ' || country AS location FROM cities;
 SELECT CONCAT(name, ', ', country) AS location FROM cities;
 ```
 
-You can nest functions as well, here is an example of nested string functions, we took the same logic from above but used the uppercase function on both the city and the country name:
+You can nest functions as well, here is an example of nested string functions, we took the same logic from above but used the uppercase function on the temporary location column we created joining the city and country.
 
 ```
-SELECT CONCAT(UPPER(name), ', ', UPPER(country)) AS location FROM cities;
+SELECT
+  UPPER(CONCAT(name, ', ', country)) AS location
+FROM
+  cities;
 ```
+
+## Filtering using `WHERE`
+
+To return specific data based on filters you can use the `WHERE` keyword. This allows you to specify any filters you would like to add before returning the data from the table. For instance if we wanted to only return cities with an area greater than 4000 we would use this query:
+
+```
+SELECT
+  name,
+  area
+FROM
+  cities
+WHERE
+  area > 4000;
+```
+
+### Comparison Operators
+
+- `=` Are the values equal?
+- `>` Is the value on the left greater?
+- `<` Is the value on the left less?
+- `>=` Is the valye on the left greater or equal to?
+- `IN` Is the value present in a list?
+- `<=` Is the value on the left lesser or equal to?
+- `<>` Are the values not equal?
+- `!=` Are the values not equal?
+- `BETWEEN` Is the value between two other values?
+- `NOT IN` Is the value NOT present in a list?
