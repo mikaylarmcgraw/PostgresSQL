@@ -1,5 +1,14 @@
 # SQL & PostgreSQL: The Complete Developer's Guide
 
+# Table of Contents
+
+1. [Database Design Process](#database-design-process)
+2. [Creating Table](#Creating-Tables)
+3. [Inserting Data Into a Table](#Inserting-Data-Into-a-Table)
+4. [Retrieving Data](#Retrieving-Data)
+5. [Calculation Columns Within Table](calculation-columns-within-table)
+6. [String Operators & Functions](string-operators-&-functions)
+
 ## Database Design Process
 
 When thinking about how to design your database think of these questions:
@@ -8,7 +17,7 @@ When thinking about how to design your database think of these questions:
 - What properties does this thing have? (A: name, country, population area)
 - What type of data does each of those properties contain?(A: name: string, country: string, population: number, area: number)
 
-## Creating Table:
+## Creating Table
 
 In this section we discussed how to create a table within our datbase and create the columns and their datatypes within our table here's an example of creating a table called cities and it's properties:
 
@@ -21,7 +30,7 @@ CREATE TABLE cities (
   );
 ```
 
-## Inserting Data Into a Table:
+## Inserting Data Into a Table
 
 To insert data into your table you will need to use the `INSERT` keyword followed by the properties you will be including within your inserts. Here's a sample block explaining how to insert a row of data into your cities table:
 
@@ -54,4 +63,36 @@ To retrieve only specific columns you can specify those in your query, the sampl
 
 ```
 SELECT name, country FROM cities
+```
+
+## Calculation Columns Within Table
+
+You have the ability to do some logic to your data using the columns within your table. For instance if we wanted to calculate the population density of our cities we can run the following query which would divide the population of each city by it's area. You can also see we are labeling this temporary column of data as population_density. This would return the population density of each city without altering your current table:
+
+```
+SELECT name, population/area AS population_density FROM cities;
+```
+
+## String Operators & Functions
+
+Here is a list of common string opperators and functions below:
+
+- `||` Join two strings
+- `CONCAT()` Join two strings
+- `LOWER()` Gives a lower case string
+- `LENGTH()` Gives number of characters in a string
+- `UPPER()` Gives an upper case string
+
+This example shows a use case for the join operators to join the city and country from our data together. The below query will grab the name of the city and join that with a `', '` which adds a space and comma before joining again with the country and renaming this information as a temporary column location:
+
+```
+SELECT name ||', ' || country AS location FROM cities;
+
+SELECT CONCAT(name, ', ', country) AS location FROM cities;
+```
+
+You can nest functions as well, here is an example of nested string functions, we took the same logic from above but used the uppercase function on both the city and the country name:
+
+```
+SELECT CONCAT(UPPER(name), ', ', UPPER(country)) AS location FROM cities;
 ```
