@@ -3,11 +3,11 @@
 # Table of Contents
 
 1. [Database Design Process](#database-design-process)
-2. [Creating Table](#Creating-Tables)
-3. [Inserting Data Into a Table](#Inserting-Data-Into-a-Table)
-4. [Retrieving Data](#Retrieving-Data)
-5. [Calculation Columns Within Table](calculation-columns-within-table)
-6. [String Operators & Functions](string-operators-&-functions)
+2. [Creating Tables](#creating-tables)
+3. [Inserting Data Into a Table](#inserting-data-into-a-table)
+4. [Retrieving Data](#retrieving-data)
+5. [Calculation Columns Within Table](#calculation-columns-within-table)
+6. [String Operators and Functions](#string-operators-and-functions)
 
 ## Database Design Process
 
@@ -17,7 +17,7 @@ When thinking about how to design your database think of these questions:
 - What properties does this thing have? (A: name, country, population area)
 - What type of data does each of those properties contain?(A: name: string, country: string, population: number, area: number)
 
-## Creating Table
+## Creating Tables
 
 In this section we discussed how to create a table within our datbase and create the columns and their datatypes within our table here's an example of creating a table called cities and it's properties:
 
@@ -73,7 +73,7 @@ You have the ability to do some logic to your data using the columns within your
 SELECT name, population/area AS population_density FROM cities;
 ```
 
-## String Operators & Functions
+## String Operators and Functions
 
 Here is a list of common string opperators and functions below:
 
