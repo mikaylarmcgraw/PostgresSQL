@@ -9,7 +9,7 @@
 5. [Calculation Columns Within Table](#calculation-columns-within-table)
 6. [String Operators and Functions](#string-operators-and-functions)
 7. [Filtering using `WHERE`](#filtering-using-where)
-   1. [Comparison Operators](##comparison-operators)
+   - [Comparison Operators](#comparison-operators)
 
 ## Database Design Process
 
