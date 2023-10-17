@@ -10,6 +10,7 @@
 6. [String Operators and Functions](#string-operators-and-functions)
 7. [Filtering using `WHERE`](#filtering-using-where)
    - [Comparison Operators](#comparison-operators)
+8. [Data Types]
 
 ## Database Design Process
 
@@ -128,3 +129,14 @@ WHERE
 - `!=` Are the values not equal?
 - `BETWEEN` Is the value between two other values?
 - `NOT IN` Is the value NOT present in a list?
+
+## Data Types
+
+In this section we will discuss the different data types availble in PostgreSQL.
+
+### Numeric Types
+
+- Serial (id column of any table)
+- Integer (Need to store a number without decimal)
+- Numeric (Need to store a number with a decimal and it needs to be very accurate)
+- Double (Need to store a number with a decimal and the decimal doesn't make a big difference)
